@@ -1,0 +1,27 @@
+<% var me = window.localStorage.getItem('myTeam'); %>
+
+<div class="line">
+	<div class="dot" title="Task <%= task %>"></div>
+</div>
+<% if(!_.isEmpty(teams)) { %>
+	<% var rest = _.without(teams, me); %>
+	<div class="arrow" <% if(_.isEmpty(rest)) { %>style="visibility: hidden;"<% } %> ></div>
+	<div class="team">
+	<% _.each(teams, function(team) { %>
+		<% if(team == me) { %>
+			<div class="icon <%= team.toLowerCase() %> me" title="<%= team %>"></div>
+		<% } %>
+	<% }); %>
+	<% if(rest.length > 1) { %>
+		<div class="icon <%= rest[0].toLowerCase() %>" title="<%= rest[0] %>"></div>
+		<div class="more-icons-number"
+			data-task="<%= task %>" 
+			data-notshow="<%= rest[0] %>" 
+			title="<%= rest.length - 1 %> other teams">+<%= rest.length - 1 %></div>
+	<% } else { %>
+		<% _.each(rest, function(team) { %>
+			<div class="icon <%= team.toLowerCase() %>" title="<%= team %>"></div>
+		<% }); %>
+	<% } %>
+	</div>
+<% } %>

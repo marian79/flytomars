@@ -1,0 +1,68 @@
+[
+	{
+    	"name": "Superman",
+        "picture": "superman",
+        "current_task": 1,
+        "is_mine": false
+    },
+    {
+    	"name": "CatWoman",
+        "picture": "catwoman",
+        "current_task": 1,
+        "is_mine": false
+    },
+    {
+    	"name": "CaptainAmerica",
+        "picture": "captainamerica",
+        "current_task": 2,
+        "is_mine": false
+    },
+    {
+    	"name": "Spiderman",
+        "picture": "spiderman",
+        "current_task": 4,
+        "is_mine": false
+    },
+    {
+    	"name": "Batman",
+        "picture": "batman",
+        "current_task": 7,
+        "is_mine": true
+    },
+    {
+    	"name": "SilverSurfer",
+        "picture": "silversurfer",
+        "current_task": 2,
+        "is_mine": false
+    },
+    {
+    	"name": "Wolverine",
+        "picture": "wolverine",
+        "current_task": 5,
+        "is_mine": false
+    },
+    {
+    	"name": "WonderWoman",
+        "picture": "wonderwoman",
+        "current_task": 4,
+        "is_mine": false
+    },
+    {
+    	"name": "Thor",
+        "picture": "thor",
+        "current_task": 4,
+        "is_mine": false
+    },
+    {
+    	"name": "Ironman",
+        "picture": "ironman",
+        "current_task": 6,
+        "is_mine": false
+    },
+    {
+    	"name": "Hulk",
+        "picture": "hulk",
+        "current_task": 7,
+        "is_mine": false
+    }
+]

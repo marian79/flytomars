@@ -1,0 +1,399 @@
+
+.container-fluid {
+	z-index: 100;
+}
+
+#team-score {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 500px;
+	margin-top: -40px;
+
+	li {
+		list-style: none;
+		width: 100%;
+		height: 60px;
+		@media (min-width: 1300px) {
+			height: 80px;
+		}
+		@media (min-width: 1600px) {
+			height: 100px;
+		}
+		
+		.team-picture {
+			float: left;
+			width: 50px;
+			height: 50px;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			border: 2px solid #fff;
+			@media (min-width: 1300px) {
+				width: 70px;
+				height: 70px;
+			}
+			@media (min-width: 1600px) {
+				width: 80px;
+				height: 80px;
+			}
+		}
+
+		.team-name {
+			float: left;
+			font-size: 24px;
+			margin: 28px 0px 0px 20px;
+			width: 50%;
+			max-width: 320px;
+			text-align: left;
+			color: #fff;
+			text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.5);
+		}
+
+		.team-score {
+			display: inline;
+			float: left;
+			color: #ffa500;
+			font-size: 42px;
+			margin: 14px;
+
+			&:after {
+				content: ' pts.'
+			}
+		}
+	}
+}
+
+#modal {
+	width: 90%;
+	height: auto;
+	min-height: 400px;
+	border: 5px solid rgba(255, 255, 255, 0.5);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #000;
+	position: absolute;
+	top: 120px;
+	left: 50%;
+	-webkit-transform: translateX(-50%); 
+	-moz-transform: translateX(-50%); 
+	transform: translateX(-50%); 
+	color: #fff;
+	text-align: center;
+	opacity: 1;
+	padding: 20px;
+
+	h1 {
+		font-size: 30px;
+		font-weight: 700;
+	}
+
+	p {
+		font-size: 18px;
+
+		span {
+			color: #ffa500;
+			font-weight: 700;
+			font-size: 24px;
+		}
+	}
+
+	#team-selector {
+		text-align: center;
+		margin: 40px 0px 40px -40px;
+
+		li {
+			display: inline-block;
+			
+			.team-picture {
+				width: 90px;
+				height: 90px;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				margin: 10px 5px;
+				border: 4px solid #fff;
+
+				@media (min-width: 1600px) {
+					width: 120px;
+					height: 120px;
+				}
+
+				&.disabled {
+					cursor: not-allowed;
+					opacity: 0.2;
+				}
+			}
+
+			.team-name {
+				font-size: 18px;
+
+				&.disabled {
+					opacity: 0.2;
+				}
+			}
+
+			.team-score {
+				display: none;	
+			}
+		}
+	}
+
+	#loader {
+		margin: 0 auto;	
+		display: none;
+		height: 230px;
+		width: 500px;
+	}
+
+	#verifier {
+		display: none;
+		margin: 60px auto 20px;
+		width: 500px;
+		height: 280px;
+		background: url('/images/facepalm.jpg') no-repeat -1178px -4760px transparent;
+		background-size: 500% 500%;
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		transition: all 0.2s;
+		opacity: 0;
+		
+		&.not-zoomed {
+			background: url('/images/facepalm.jpg') no-repeat 0px 0px transparent;
+			background-size: 100% 100%;
+			margin: 10px auto 20px;
+			opacity: 1;
+			@media (min-width: 1200px) {
+				width: 600px;
+				height: 336px;
+			}
+			@media (min-width: 1600px) {
+				width: 1000px;
+				height: 560px;
+			}
+		}
+	}
+
+	.opinion {
+		display: none;
+
+		p {
+			margin: 20px;
+			text-align: center;
+		}
+	}
+
+	#opinion-success {
+		margin-top: 100px;
+	}
+
+	.verify-button {
+		transition: all 0.4s linear;
+	}
+}
+
+
+#logo {
+	background: url('/images/logo.png') no-repeat 0 0 transparent;
+	background-size: contain;
+	width: 240px;
+	height: 70px;
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	z-index: 999999;
+	cursor: pointer;
+}
+
+#mars {
+	width: 100px;
+	height: 45px;
+	background: url('/images/mars.png') no-repeat center center transparent;
+	background-size: contain;
+}
+
+#earth {
+	width: 100px;
+	height: 85px;
+	background: url('/images/earth.png') no-repeat center center transparent;
+	background-size: contain;
+}
+
+#progress-container {
+	margin-top: 60px;
+	@media (min-width: 1300px) {
+		margin-top: 90px;
+	}
+	@media (min-width: 1600px) {
+		margin-top: 160px;
+	}
+
+	#teams-uncovered-list {
+		position: absolute;
+		width: 0px;
+		height: 58px;
+		border: 1px solid #000;
+		background-color: #000;
+		border-radius: 0px 4px 4px 0;
+
+		.icon {
+			border: 2px solid #fff;
+			width: 42px;
+			height: 42px;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			float: left;
+			margin: 7px 8px;
+		}
+	}
+}
+
+#progress {
+	margin-top: 5px;
+	
+	li {
+		clear: both;
+		height: 50px;
+		margin: 0px 0px 0px 5px;
+		list-style: none;
+
+		.line {
+			background: url('/images/list.png') repeat-y center center scroll transparent;
+			width: 10px;
+			height: 50px;
+			float: left;
+
+			.dot {
+				width: 7px;
+				height: 7px;
+				background-color: #fff;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				margin: 20px 0px 0px 2px;
+			}
+		}
+		.team {
+			width: auto;
+			height: 58px;
+			margin-top: -5px;
+			background-color: #000;
+			float: left;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			text-align: center;
+
+			.icon {
+				border: 2px solid #fff;
+				width: 42px;
+				height: 42px;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				float: left;
+				margin: 7px 8px;
+
+				&.me {
+					position: absolute;
+					margin-left: -53px;
+				}
+			}
+
+			.more-icons-number {
+				width: 30px;
+				float: left;
+				color: #ffa500;
+				font-size: 20px;
+				margin: 0px 4px 0px -6px;
+				cursor: pointer;
+				height: 58px;
+  				padding-top: 13px;
+			}
+		}
+
+		.arrow {
+			width: 0;
+			height: 0;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-right: 10px solid #000;
+			float: left;
+			margin-top: 16px; 
+			margin-left: 16px;
+		}
+	}
+}
+
+.superman {
+	background: url('/images/superman.jpg') no-repeat center center transparent;
+	background-size: cover;
+}
+.thor {
+	background: url('/images/thor.jpg') no-repeat center center transparent;
+	background-size: cover;
+}
+.hulk {
+	background: url('/images/hulk.jpg') no-repeat center center transparent;
+	background-size: cover;
+}
+.batman {
+	background: url('/images/batman.jpg') no-repeat center center transparent;
+	background-size: cover;
+}
+.spiderman {
+	background: url('/images/spiderman.jpg') no-repeat center center transparent;
+	background-size: cover;
+}
+.catwoman {
+	background: url('/images/catwoman.jpg') no-repeat center center transparent;
+	background-size: cover;
+}
+.captainamerica {
+	background: url('/images/captainamerica.jpg') no-repeat center center transparent;
+	background-size: cover;
+}
+.ironman {
+	background: url('/images/ironman.jpg') no-repeat center center transparent;
+	background-size: cover;
+}
+.wonderwoman {
+	background: url('/images/wonderwoman.jpg') no-repeat center center transparent;
+	background-size: cover;
+}
+.silversurfer {
+	background: url('/images/silversurfer.jpg') no-repeat center center transparent;
+	background-size: cover;
+}
+.wolverine {
+	background: url('/images/wolverine.jpg') no-repeat center center transparent;
+	background-size: cover;
+}
+
+.btn-basic-orange {
+	background-color: transparent;
+    border: 2px solid #ffa500;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: #ffa500;
+    font-size: 20px;
+    font-weight: 700;
+    transition: all 0.4s linear;
+    padding: 10px 30px;
+    margin-top: 2px;
+    text-transform: uppercase;
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s linear;
+
+    &:hover,
+    &:active,
+    &.active {
+    	border: 2px solid #ffa500;
+     	background-color: #ffa500;
+      	color: #fff;
+    }
+}
+

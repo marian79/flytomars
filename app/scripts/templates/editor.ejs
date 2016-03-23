@@ -1,0 +1,48 @@
+<div class="tab">Editor</div>
+<div class="tools">
+	<fieldset>
+	    <label>Color theme:
+	    	<select id="ace-theme" size="1">
+	        	<optgroup label="bright">
+	            	<option value="chrome">chrome</option>
+	                <option value="clouds">clouds</option>
+	                <option value="eclipse">eclipse</option>
+	                <option value="github">github</option>
+	                <option value="textmate">textmate</option>
+	                <option value="tomorrow">tomorrow</option>
+	            </optgroup>
+	            <optgroup label="dark">
+	            	<option value="cobalt">cobalt</option>
+	                <option value="merbivore">merbivore</option>
+	                <option value="monokai" selected>monokai</option>
+	                <option value="twilight">twilight</option>
+	            </optgroup>
+	        </select>
+	    </label>  
+
+	    <label>Language:  
+	    	<select id="ace-mode">
+	        	<option value="C#">C#</option>
+	            <option value="Java">Java</option>
+	            <option value="JavaScript">JavaScript</option>
+	            <option value="PHP">PHP</option>
+	            <option value="Python">Python</option>
+	            <option value="Ruby">Ruby</option>
+	        </select>
+	    </label> 
+	</fieldset>
+</div>
+<div class="content">  
+
+	<div class="editor">
+	  <code id="ace-editorid"></code>
+	</div>
+</div>
+
+<div id="answer-container">
+	<label>And the answer is</label>
+	<div class="input-container">
+		<input type="text" class="answer" />
+	</div>
+	<button id="submit-answer" class="btn btn-primary btn-basic-orange">Launch</button> 
+</div>

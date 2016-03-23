@@ -1,0 +1,22 @@
+#tasks {
+	z-index: 999999;
+	margin-top: 95px;
+	width: 90%;
+  	text-align: left;
+	
+	.task {
+		color: #fff;
+		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.5);
+
+		h4 {
+			font-size: 28px;
+			text-transform: uppercase;
+			font-weight: 700;
+			margin-bottom: 40px;
+		}
+		p {
+			font-size: 18px;
+		}	
+	}
+	
+}
